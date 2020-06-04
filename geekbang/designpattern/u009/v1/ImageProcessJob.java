@@ -12,7 +12,7 @@ public class ImageProcessJob {
   public void process() {
     Image image = null; // TODO
     AliyunImageStore imageStore = new AliyunImageStore();
-    imageStore.createBucketInfNotExisting(BUCKET_NAME);
+    imageStore.createBucketInfNotExisting("ai_images_bucket");
     String accessToken = imageStore.generateAccessToken();
     imageStore.uploadToAliyun(image, BUCKET_NAME, accessToken);
   }
